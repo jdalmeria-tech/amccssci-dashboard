@@ -12,8 +12,12 @@ const summaryStats = (agents) => [
 function App() {
   return (
     <div className="dashboard">
-      <h1 className="dashboard-title">AMC Dashboard</h1>
-      <p className="dashboard-subtitle">Live Agent Monitor — {new Date().toLocaleDateString()}</p>
+      <div className="dashboard-header">
+        <div>
+          <h1 className="dashboard-title">AMC Dashboard</h1>
+          <p className="dashboard-subtitle">Live Agent Monitor — {new Date().toLocaleDateString()}</p>
+        </div>
+      </div>
 
       <div className="summary-bar">
         {summaryStats(agents).map(stat => (
@@ -27,6 +31,8 @@ function App() {
       <div className="agent-grid">
         {agents.map(agent => <AgentCard key={agent.id} agent={agent} />)}
       </div>
+
+      <div className="brand">powered by Sephaya.dev</div>
     </div>
   );
 }

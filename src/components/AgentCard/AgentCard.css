@@ -1,6 +1,6 @@
 .agent-card {
   background: #1e293b;
-  border-radius: 12px;
+  border-radius: 6px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -27,6 +27,21 @@
 .agent-calls {
   color: #94a3b8;
   font-size: 14px;
+}
+
+.blink-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+  margin-right: 6px;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  40% { opacity: 0; }
 }
 
 .status-oncall {
