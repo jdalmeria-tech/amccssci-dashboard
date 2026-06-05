@@ -15,7 +15,7 @@ function App() {
       <div className="dashboard-header">
         <div>
           <h1 className="dashboard-title">AMC Dashboard</h1>
-          <p className="dashboard-subtitle">Live Agent Monitor — {new Date().toLocaleDateString()}</p>
+          <p className="dashboard-subtitle">Live Agent Monitor — {new Date().toLocaleString()}</p>
         </div>
       </div>
 
