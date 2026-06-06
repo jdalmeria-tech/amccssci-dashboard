@@ -61,3 +61,16 @@
 .status-away {
   background: #f59e0b;
 }
+
+.dashboard.light .agent-card {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.dashboard.light .agent-name {
+  color: #0f172a;
+}
+
+.dashboard.light .agent-calls {
+  color: #475569;
+}

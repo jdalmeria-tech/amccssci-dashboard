@@ -18,6 +18,7 @@ const summaryStats = (agents) => [
 
 function App() {
   const [agents, setAgents] = useState(agentsData);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -38,12 +39,15 @@ function App() {
   }, []);
 
   return (
-    <div className="dashboard">
+    <div className={`dashboard ${darkMode ? 'dark' : 'light'}`}>
       <div className="dashboard-header">
         <div>
           <h1 className="dashboard-title">AMC Dashboard</h1>
           <p className="dashboard-subtitle">Live Agent Monitor — {new Date().toLocaleString()}</p>
         </div>
+        <button className="toggle-btn" onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
+        </button>
       </div>
 
       <div className="summary-bar">

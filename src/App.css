@@ -77,3 +77,41 @@ body {
   width: 100%;
   background: #0f172a;
 }
+
+.dashboard.light {
+  background: #f1f5f9;
+}
+
+.dashboard.light .summary-card {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.dashboard.light .dashboard-title {
+  color: #0f172a;
+}
+
+.dashboard.light .dashboard-subtitle {
+  color: #475569;
+}
+
+.dashboard.light .brand {
+  background: #f1f5f9;
+  color: #94a3b8;
+}
+
+.toggle-btn {
+  background: #1e293b;
+  color: #f1f5f9;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.dashboard.light .toggle-btn {
+  background: #e2e8f0;
+  color: #0f172a;
+}
