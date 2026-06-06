@@ -1,6 +1,13 @@
+import { useState, useEffect } from 'react';
 import './App.css';
 import AgentCard from './components/AgentCard/AgentCard';
-import agents from './data/agents';
+import agentsData from './data/agents';
+
+const statuses = ["On Call", "Available", "Away"];
+
+const randomStatus = () => statuses[Math.floor(Math.random() * statuses.length)];
+
+const randomizeCalls = (calls) => Math.random() > 0.7 ? calls + 1 : calls;
 
 const summaryStats = (agents) => [
   { label: "On Call", value: agents.filter(a => a.status === "On Call").length, color: "#22c55e" },
@@ -10,6 +17,20 @@ const summaryStats = (agents) => [
 ];
 
 function App() {
+  const [agents, setAgents] = useState(agentsData);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAgents(prev => prev.map(agent => ({
+        ...agent,
+        status: randomStatus(),
+        calls: randomizeCalls(agent.calls),
+      })));
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="dashboard">
       <div className="dashboard-header">
