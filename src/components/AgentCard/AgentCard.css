@@ -29,6 +29,12 @@
   font-size: 14px;
 }
 
+.agent-duration {
+  color: #22c55e;
+  font-size: 13px;
+  font-weight: 600;
+}
+
 .blink-dot {
   display: inline-block;
   width: 8px;

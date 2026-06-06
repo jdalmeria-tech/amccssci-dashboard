@@ -21,11 +21,17 @@ function App() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setAgents(prev => prev.map(agent => ({
-        ...agent,
-        status: randomStatus(),
-        calls: randomizeCalls(agent.calls),
-      })));
+      setAgents(prev => prev.map(agent => {
+        const newStatus = randomStatus();
+        return {
+          ...agent,
+          status: newStatus,
+          calls: randomizeCalls(agent.calls),
+          callStart: newStatus === "On Call" && agent.status !== "On Call"
+            ? Date.now()
+            : agent.callStart,
+        };
+      }));
     }, 5000);
 
     return () => clearInterval(interval);
